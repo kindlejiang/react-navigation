@@ -22,10 +22,10 @@ const HeaderTitle = ({ style, ...rest }: Props) => (
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: Platform.OS === 'ios' ? 17 : 18,
-    fontWeight: Platform.OS === 'ios' ? '600' : '500',
+    fontSize:  17 ,
+    fontWeight:  '600',
     color: 'rgba(0, 0, 0, .9)',
-    textAlign: Platform.OS === 'ios' ? 'center' : 'left',
+    textAlign:  'center',
     marginHorizontal: 16,
   },
 });

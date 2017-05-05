@@ -33,9 +33,9 @@ type HeaderState = {
   },
 };
 
-const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
-const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
-const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 40;
+const APPBAR_HEIGHT =  44;
+const STATUSBAR_HEIGHT =  20 ;
+const TITLE_OFFSET = 70 ;
 
 class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
   static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
@@ -160,15 +160,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
   _renderTitle(props: SceneProps, options: *): ?React.Element<*> {
     const style = {};
 
-    if (Platform.OS === 'android') {
-      if (!options.hasLeftComponent) {
-        style.left = 0;
-      }
-      if (!options.hasRightComponent) {
-        style.right = 0;
-      }
-    }
-
+    
     return this._renderSubView(
       { ...props, style },
       'title',
@@ -303,7 +295,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
 const styles = StyleSheet.create({
   container: {
     paddingTop: STATUSBAR_HEIGHT,
-    backgroundColor: Platform.OS === 'ios' ? '#EFEFF2' : '#FFF',
+    backgroundColor: '#EFEFF2',
     height: STATUSBAR_HEIGHT + APPBAR_HEIGHT,
     shadowColor: 'black',
     shadowOpacity: 0.1,
@@ -330,7 +322,7 @@ const styles = StyleSheet.create({
     right: TITLE_OFFSET,
     top: 0,
     position: 'absolute',
-    alignItems: Platform.OS === 'ios' ? 'center' : 'flex-start',
+    alignItems: 'center' ,
   },
   left: {
     left: 0,

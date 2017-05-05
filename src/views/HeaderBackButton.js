@@ -90,7 +90,7 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
             style={[styles.icon, title && styles.iconWithTitle, { tintColor }]}
             source={asset}
           />
-          {Platform.OS === 'ios' &&
+          {
             title &&
             <Text
               onLayout={this._onTextLayout}
@@ -115,8 +115,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     paddingRight: 10,
   },
-  icon: Platform.OS === 'ios'
-    ? {
+  icon: {
         height: 20,
         width: 12,
         marginLeft: 10,
@@ -125,18 +124,11 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         transform: [{ scaleX: I18nManager.isRTL ? -1 : 1 }],
       }
-    : {
-        height: 24,
-        width: 24,
-        margin: 16,
-        resizeMode: 'contain',
-        transform: [{ scaleX: I18nManager.isRTL ? -1 : 1 }],
-      },
-  iconWithTitle: Platform.OS === 'ios'
-    ? {
+    ,
+  iconWithTitle:  {
         marginRight: 5,
       }
-    : {},
+   ,
 });
 
 export default HeaderBackButton;
