@@ -33,8 +33,12 @@ type HeaderState = {
   },
 };
 
-const APPBAR_HEIGHT =  44;
-const STATUSBAR_HEIGHT =  20 ;
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+//const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 40;
+
+//const APPBAR_HEIGHT =  44;
+//const STATUSBAR_HEIGHT =  20 ;
 const TITLE_OFFSET = 70 ;
 
 class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
