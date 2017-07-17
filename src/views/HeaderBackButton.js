@@ -40,7 +40,7 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
     tintColor: Platform.select({
       ios: '#037aff',
     }),
-    truncatedTitle: 'Back',
+    truncatedTitle: '',
   };
 
   state = {};
@@ -70,7 +70,10 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
       : false;
 
     const backButtonTitle = renderTruncated ? truncatedTitle : title;
-
+    if(backButtonTitle.length >=2 ) {
+       backButtonTitle = backButtonTitle.substr(0,2);
+    }
+   
     // eslint-disable-next-line global-require
     const asset = require('./assets/back-icon.png');
 
