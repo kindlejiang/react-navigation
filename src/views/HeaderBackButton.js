@@ -69,7 +69,7 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
       ? this.state.initialTextWidth > width
       : false;
 
-    const backButtonTitle = renderTruncated ? truncatedTitle : title;
+    let backButtonTitle = renderTruncated ? truncatedTitle : title;
     if(backButtonTitle.length >=2 ) {
        backButtonTitle = backButtonTitle.substr(0,2);
     }
